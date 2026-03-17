@@ -1,5 +1,6 @@
 requests
 beautifulsoup4
 nltk
+Flask
 # spaCy (optional, for more advanced NLP)
 # pandas (for data handling)
