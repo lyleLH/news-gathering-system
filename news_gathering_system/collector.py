@@ -26,10 +26,7 @@ def run_collector():
         ],
         "competitor_blog": [
             {"url": "https://blog.cloudflare.com/", "competitor_name": "Cloudflare", "selectors": None}
-        ],
-        "ugc_forum_listing": [
-            {"url": "https://www.example.com/forum", "selectors": None} # Still a placeholder, as real forums are complex
-        ]
+
     }
     
     # Collect data from all defined sources
