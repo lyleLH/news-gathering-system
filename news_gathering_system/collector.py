@@ -1,5 +1,6 @@
 from news_gathering_system.storage.database_manager import DatabaseManager
 from news_gathering_system.acquisition.data_acquirer import DataAcquirer
+import logging
 import os
 from news_gathering_system.config import DATABASE_PATH
 
