@@ -1,7 +1,7 @@
 from news_gathering_system.storage.database_manager import DatabaseManager
 from news_gathering_system.acquisition.data_acquirer import DataAcquirer
-import logging
 import os
+from news_gathering_system.config import DATABASE_PATH
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -9,8 +9,7 @@ def run_collector():
     logging.info("Starting data collection...")
     
     # Initialize DatabaseManager
-    db_path = os.path.join(os.path.dirname(__file__), '..', 'news_data.db')
-    db_manager = DatabaseManager(db_path)
+    db_manager = DatabaseManager(DATABASE_PATH)
     
     # Initialize DataAcquirer
     data_acquirer = DataAcquirer(db_manager)
