@@ -1,0 +1,5 @@
+requests
+beautifulsoup4
+nltk
+# spaCy (optional, for more advanced NLP)
+# pandas (for data handling)
