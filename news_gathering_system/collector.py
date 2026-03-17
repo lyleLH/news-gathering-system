@@ -26,7 +26,7 @@ def run_collector():
         ],
         "competitor_blog": [
             {"url": "https://blog.cloudflare.com/", "competitor_name": "Cloudflare", "selectors": None}
-
+        ]
     }
     
     # Collect data from all defined sources
