@@ -79,16 +79,16 @@ class DataAcquirer:
     def scrape_news_site(self, url, selectors=None):
         logging.info(f"Scraping news site: {url}")
         soup = self._fetch_page(url)
-        if not soup: return
+        if not soup: return [] # Return empty list if page fetch fails
 
         current_selectors = selectors if selectors else self.default_selectors["news_site"]
         articles_data = []
         for article_container in soup.select(current_selectors["article_container"]):
-            title_elem = article_container.select_one(current_selectors["title"])
-            link_elem = article_container.select_one(current_selectors["link"])
-            summary_elem = article_container.select_one(current_selectors["summary"])
-            author_elem = article_container.select_one(current_selectors["author"])
-            date_elem = article_container.select_one(current_selectors["date"])
+            title_elem = article_container.select_one(current_selectors["title"]) if current_selectors["title"] else None
+            link_elem = article_container.select_one(current_selectors["link"]) if current_selectors["link"] else None
+            summary_elem = article_container.select_one(current_selectors["summary"]) if current_selectors["summary"] else None
+            author_elem = article_container.select_one(current_selectors["author"]) if current_selectors["author"] else None
+            date_elem = article_container.select_one(current_selectors["date"]) if current_selectors["date"] else None
 
             title = title_elem.get_text(strip=True) if title_elem else ""
             link = urljoin(url, link_elem['href']) if link_elem and 'href' in link_elem.attrs else ""
